@@ -10,6 +10,7 @@ Group:		X11/Applications/Multimedia
 Source0:	http://debianlinux.net/%{_name}.txt
 URL:		http://debianlinux.net/captain_css.html
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	xine-lib-devel >= 0.9.3
 Requires:	xine-ui
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -32,9 +33,10 @@ tar xvzf %{_prgname}-%{version}.tar.gz
 
 %build
 cd %{_prgname}-%{version}
+rm -f missing
 aclocal
-automake -a -c -f
 autoconf
+automake -a -c -f
 %configure
 %{__make}
 
@@ -42,6 +44,7 @@ autoconf
 rm -rf $RPM_BUILD_ROOT
 
 cd %{_prgname}-%{version}
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
