@@ -7,12 +7,14 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://debianlinux.net/%{_name}-%{version}.tgz
-Patch0:		%{_name}-plugin-version.patch
+Patch0:		%{_name}-plugin-configure.patch
 URL:		http://debianlinux.net/captain_css.html
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	xine-lib-devel = 0.9.12
-Requires:	xine-ui = 0.9.12
+BuildRequires:	libtool
+BuildRequires:	xine-lib-devel >= 0.9.10
+Conflicts:	xine-lib > 0.9.12
+Requires:	xine-ui >= 0.9.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
