@@ -1,7 +1,7 @@
 %define		_name		d5d011
 %define		_prgname	xine-d5d
 Summary:	DVD CSS input plugin for Xine
-Summary(pl):	Plugin odczytu DVD CSS dla Xine
+Summary(pl):	Wtyczka do odczytu DVD CSS dla Xine
 Name:		%{_prgname}-plugin
 Version:	0.1.1
 Release:	1
@@ -9,8 +9,8 @@ License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://debianlinux.net/%{_name}.txt
 URL:		http://debianlinux.net/captain_css.html
-BuildRequires:	xine-lib-devel >= 0.9.3
 BuildRequires:	autoconf
+BuildRequires:	xine-lib-devel >= 0.9.3
 Requires:	xine-ui
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -18,12 +18,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_pluginsdir	%{_libdir}/xine/plugins
 
 %description
-Using our software, you are able to view all of your encrypted and locked 
-dvds without even noticing that someone tried real hard to keep you from 
+Using our software, you are able to view all of your encrypted and locked
+dvds without even noticing that someone tried real hard to keep you from
 doing so... finally dvd playback _REALLY_ comes to linux.
 
 %description -l pl
-U¿ywajac tej wtyczki mozna ogladac wszelkie, zakodowane plyty DVD.
+U¿ywaj±c tej wtyczki mo¿na ogl±daæ wszelkie zakodowane p³yty DVD.
 
 %prep
 %setup -T -c %{_prgname}-%{version}
