@@ -4,10 +4,11 @@ Summary:	DVD CSS input plugin for Xine
 Summary(pl):	Wtyczka do odczytu DVD CSS dla Xine
 Name:		%{_prgname}-plugin
 Version:	0.1.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://debianlinux.net/%{_name}.txt
+Patch0:		%{name}-version.patch
 URL:		http://debianlinux.net/captain_css.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -29,11 +30,13 @@ U¿ywaj±c tej wtyczki mo¿na ogl±daæ wszelkie zakodowane p³yty DVD.
 %prep
 %setup -T -c %{_prgname}-%{version}
 sh %{SOURCE0}
-tar xvzf %{_prgname}-%{version}.tar.gz
+tar xzf %{_prgname}-%{version}.tar.gz
+%patch -p1
 
 %build
 cd %{_prgname}-%{version}
 rm -f missing
+%{__libtoolize}
 aclocal
 %{__autoconf}
 %{__automake}
@@ -48,12 +51,10 @@ cd %{_prgname}-%{version}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{_prgname}-%{version}/*.gz
+%doc %{_prgname}-%{version}/README
 %attr(755,root,root) %{_pluginsdir}/*
