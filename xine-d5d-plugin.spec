@@ -7,6 +7,7 @@ Release:	3
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://debianlinux.net/%{_name}-%{version}.tgz
+# Source0-md5:	dccb93df7c2dc09574d802bd19a1f7aa
 Patch0:		%{_name}-plugin-configure.patch
 Patch1:		%{_name}-plugin-api.patch
 URL:		http://debianlinux.net/captain_css.html
