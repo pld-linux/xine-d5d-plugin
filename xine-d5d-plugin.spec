@@ -3,7 +3,7 @@ Summary:	DVD CSS input plugin for Xine
 Summary(pl):	Wtyczka do odczytu DVD CSS dla Xine
 Name:		%{_name}-plugin
 Version:	0.2.7
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://debianlinux.net/%{_name}-%{version}.tgz
@@ -13,8 +13,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	xine-lib-devel >= 0.9.10
-Conflicts:	xine-lib > 0.9.12
-Requires:	xine-ui >= 0.9.10
+%requires_eq	xine-lib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -35,7 +34,7 @@ U¿ywaj±c tej wtyczki mo¿na ogl±daæ wszelkie zakodowane p³yty DVD.
 %build
 rm -f missing
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure
