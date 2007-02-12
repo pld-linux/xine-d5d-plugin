@@ -1,6 +1,6 @@
 %define		_name		xine-d5d
 Summary:	DVD CSS input plugin for Xine
-Summary(pl.UTF-8):   Wtyczka do odczytu DVD CSS dla Xine
+Summary(pl.UTF-8):	Wtyczka do odczytu DVD CSS dla Xine
 Name:		%{_name}-plugin
 Version:	0.2.7
 Release:	3
